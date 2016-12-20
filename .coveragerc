@@ -1,0 +1,3 @@
+[run]
+source = lj_401d5
+omit = lj_401d5/test*
