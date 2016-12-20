@@ -1,5 +1,6 @@
 from pyramid.response import Response
 # from pyramid.view import view_config
+import os
 
 
 # @view_config(route_name='home', renderer='templates/mytemplate.pt')
@@ -7,7 +8,12 @@ from pyramid.response import Response
 #     return {'project': 'lj_401d5'}
 
 
+HERE = os.path.dirname(__file__)
+
+
 def home_page(request):
+    imported_text = open(os.path.join(HERE, 'sample.txt')).read()
+    return Response(imported_text)
     return Response("This is a home page.")
 
 
